@@ -1,0 +1,39 @@
+{
+	observedBy: "ojota-maryland",
+	"_id": "287267658-2400358782",
+	fromNode: {
+		osm_id: "287267658",
+		latlon: "6.5979108, 3.3861857",
+		geometry: {
+			type: "Point",
+			coordinates: [ 3.3861857, 6.5979108 ]
+		},
+		tags: {
+			name: "Kudirat Abiola Way/Ikorodu Road",
+			highway: "traffic_signals"
+		},
+		partOf: [ "133882118", "133882114", "133882117" ]
+	},
+	toNode: {
+		osm_id: "2400358782",
+		latlon: "6.582649, 3.3751078",
+		geometry: {
+			type: "Point",
+			coordinates: [ 3.3751078, 6.582649 ]
+		},
+		tags: {
+		},
+		partOf: [ "133882114", "133882117" ]
+	},
+	partOf: {
+		osm_id: "133882117",
+		tags: {
+			highway: "motorway",
+			lanes: 2,
+			name: "Ikorodu Road",
+			oneway: "yes",
+			ref: "A1",
+			surface: "paved"
+		}
+	}
+}

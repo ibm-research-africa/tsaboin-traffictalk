@@ -24,7 +24,8 @@
 		var map = {};
 		query.replace(/([^&=]+)=?([^&]*)(?:&+|$)/g,
 				function(match, key, value) {
-					(map[key] = map[key] || []).push(decodeURIComponent(value));
+					//(map[key] = map[key] || []).push(decodeURIComponent(value));
+					map[key] = decodeURIComponent(value);
 				});
 		return map;
     })();

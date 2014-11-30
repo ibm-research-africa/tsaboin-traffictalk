@@ -46,12 +46,13 @@
     
     var accessTokenObtained = (function() {
     	var deferred = $.Deferred();
-    	$.post('https://github.com/login/oauth/access_token?'
-    			+ $.param({
+    	$.post('https://github.com/login/oauth/access_token',
+    			$.param({
     				client_id: 'e63ce23a8be1f089ca2f',
     				client_secret: 'a7d8d1d992128f954d18b4831d93f91449622d63',
     				code: queryParams['code'] }),
-    			'', deferred.resolve, 'json').fail(deferred.reject);
+    			deferred.resolve,
+    			'json').fail(deferred.reject);
     	return deferred.promise();
     })();
     

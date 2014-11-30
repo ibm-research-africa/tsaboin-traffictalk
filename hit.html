@@ -43,6 +43,21 @@
  					scope: 'gist',
  					state: Math.random().toString(36).substr(2) }));
  	}
+    
+    var accessTokenObtained = (function() {
+    	var deferred = $.Deferred();
+    	$.post('https://github.com/login/oauth/access_token?'
+    			+ $.param({
+    				client_id: 'e63ce23a8be1f089ca2f',
+    				client_secret: 'a7d8d1d992128f954d18b4831d93f91449622d63',
+    				code: queryParams['code'] }),
+    			'', deferred.resolve, 'json');
+    	return deferred.promise();
+    })();
+    
+    accessTokenObtained.done(function(json) {
+    	window.alert(JSON.stringify(json));
+    });
  
     function onSelect() {
     	queryParams['observation'] = $('#select-observation').val();

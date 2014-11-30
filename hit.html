@@ -31,7 +31,7 @@
     
     if ('error' in queryParams) {
     	L.DomUtil.get('debug').innerHTML = JSON.stringify(queryParams);
-    	return;
+    	throw queryParams['error'];
     } else if (! ('code' in queryParams)) {
  		var redirect_uri = 'https://ibm-research-africa.github.io/tsaboin-traffictalk/hit.html?'
  			+ $.param(queryParams);

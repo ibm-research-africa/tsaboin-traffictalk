@@ -29,13 +29,16 @@
 		return map;
     })();
     
- 	if (true) {
- 		var redirect_uri = 'https://ibm-research-africa.github.io/tsaboin-traffictalk/hit.html'
+    if ('error' in queryParams) {
+    	L.DomUtil.get('debug').innerHTML = JSON.stringify(queryParams);
+    } else if (! ('code' in queryParams)) {
+ 		var redirect_uri = 'https://ibm-research-africa.github.io/tsaboin-traffictalk/hit.html?'
  			+ $.param(queryParams);
  		window.location.assign('https://github.com/login/oauth/authorize?'
  				+ $.param({
  					client_id: 'e63ce23a8be1f089ca2f',
  					redirect_uri: redirect_uri,
+ 					scope: 'gist',
  					state: 'random' }));
  	}
  

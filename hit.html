@@ -39,7 +39,7 @@
  					client_id: 'e63ce23a8be1f089ca2f',
  					redirect_uri: redirect_uri,
  					scope: 'gist',
- 					state: md5(rand()) }));
+ 					state: Math.random().toString(36).substr(2) }));
  	}
  
     function onSelect() {

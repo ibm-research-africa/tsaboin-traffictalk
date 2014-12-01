@@ -62,6 +62,15 @@
     	window.alert(JSON.stringify(json));
     }).fail(function(json) {
     	window.alert(JSON.stringify(json));
+    	delete queryParams.code;
+ 		var redirect_uri = 'https://ibm-research-africa.github.io/tsaboin-traffictalk/hit.html?'
+ 			+ $.param(queryParams);
+ 		window.location.assign('https://github.com/login/oauth/authorize?'
+ 				+ $.param({
+ 					client_id: 'e63ce23a8be1f089ca2f',
+ 					redirect_uri: redirect_uri,
+ 					scope: 'gist',
+ 					state: Math.random().toString(36).substr(2) }));
     });
  
     function onSelect() {
